@@ -1,0 +1,88 @@
+---
+import { SEO } from 'astro-seo';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <SEO
+    title={title}
+    description={description}
+    canonical={canonicalURL.href}
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script is:inline>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1773cf",
+            "background-light": "#f6f7f8",
+            "background-dark": "#111921",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style is:global>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .brutalist-border {
+      border: 3px solid #111921;
+    }
+    .dark .brutalist-border {
+      border: 3px solid #1773cf;
+    }
+    .brutalist-border-b {
+      border-bottom: 3px solid #111921;
+    }
+    .dark .brutalist-border-b {
+      border-bottom: 3px solid #1773cf;
+    }
+    .brutalist-border-r {
+      border-right: 3px solid #111921;
+    }
+    .dark .brutalist-border-r {
+      border-right: 3px solid #1773cf;
+    }
+    .shadow-brutal {
+      box-shadow: 6px 6px 0px 0px #111921;
+    }
+    .dark .shadow-brutal {
+      box-shadow: 6px 6px 0px 0px #1773cf;
+    }
+    .shadow-brutal-sm {
+      box-shadow: 3px 3px 0px 0px #111921;
+    }
+    .dark .shadow-brutal-sm {
+      box-shadow: 3px 3px 0px 0px #1773cf;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

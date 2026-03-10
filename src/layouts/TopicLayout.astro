@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+const { title, description, topic, pillar, relatedTopics, keyPoints } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-[1440px] mx-auto px-6 py-8">
+    <Navigation currentTopic={topic} currentPillar={pillar} />
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+      <div class="lg:col-span-8">
+        <article class="bg-white dark:bg-slate-900 brutalist-border p-8 shadow-brutal">
+          <slot />
+        </article>
+      </div>
+      <div class="lg:col-span-4">
+        <Sidebar relatedTopics={relatedTopics} keyPoints={keyPoints} />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

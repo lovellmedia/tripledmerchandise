@@ -1,0 +1,169 @@
+# site.spec.yaml — Site-Level Declarative Specification for tripledmerchandise.com
+
+site:
+  domain: "tripledmerchandise.com"
+  netlify_subdomain: "tripledmerchandise"
+  github_repo: "tripledmerchandise"
+  site_title: "Triple D Merchandise - Ecommerce Technical Vocabulary and Trends"
+
+topic:
+  name: "Ecommerce Technical Vocabulary and Trends"
+  slug: "ecommerce"
+  keywords:
+    - "ecommerce"
+    - "online retail"
+    - "digital commerce"
+    - "shopping technology"
+    - "retail platforms"
+
+forbidden:
+  terms:
+    - "artificial intelligence"
+    - "robotics"
+    - "machine learning"
+    - "neural networks"
+  patterns:
+    - "AI\b"
+    - "robot"
+  generic:
+    - "placeholder"
+    - "lorem ipsum"
+    - "As an AI"
+    - "ChatGPT"
+    - "I don't have access"
+    - "Key concept 1 related to"
+
+template:
+  id: "G2-05"
+  name: "brutalist_light"
+  group: "2"
+  selection_reason: "Light brutalist style provides clean, modern look for ecommerce technical content"
+
+astro:
+  site_url: "https://tripledmerchandise.com"
+  output: "static"
+  integrations:
+    - "astro-seo"
+    - "@astrojs/sitemap"
+  packages:
+    - "astro: ^4.0.0"
+    - "astro-seo: ^1.1.0"
+    - "@astrojs/sitemap: ^3.7.0"
+  dev_packages:
+    - "@playwright/test: ^1.58.2"
+
+pages:
+  homepage:
+    file: "/src/pages/index.astro"
+    layout: "BaseLayout"
+    nav_links: 8
+
+  pillars:
+    - key: "index"
+      file: "/src/pages/ecommerce/index.astro"
+      spec: "specs/pages/index.spec.yaml"
+      name: "Overview"
+      url: "/ecommerce/"
+
+    - key: "history"
+      file: "/src/pages/ecommerce/history.astro"
+      spec: "specs/pages/history.spec.yaml"
+      name: "History & Evolution"
+      url: "/ecommerce/history/"
+
+    - key: "technical-deep-dive"
+      file: "/src/pages/ecommerce/technical-deep-dive.astro"
+      spec: "specs/pages/technical-deep-dive.spec.yaml"
+      name: "Technical Deep-Dive"
+      url: "/ecommerce/technical-deep-dive/"
+
+    - key: "ontology"
+      file: "/src/pages/ecommerce/ontology.astro"
+      spec: "specs/pages/ontology.spec.yaml"
+      name: "Ontology & Knowledge Base"
+      url: "/ecommerce/ontology/"
+
+    - key: "trends"
+      file: "/src/pages/ecommerce/trends.astro"
+      spec: "specs/pages/trends.spec.yaml"
+      name: "Current Trends & Future Outlook"
+      url: "/ecommerce/trends/"
+
+    - key: "tools"
+      file: "/src/pages/ecommerce/tools.astro"
+      spec: "specs/pages/tools.spec.yaml"
+      name: "Tools & Resources"
+      url: "/ecommerce/tools/"
+
+    - key: "challenges"
+      file: "/src/pages/ecommerce/challenges.astro"
+      spec: "specs/pages/challenges.spec.yaml"
+      name: "Common Challenges & Solutions"
+      url: "/ecommerce/challenges/"
+
+components:
+  - "Header.astro"
+  - "Footer.astro"
+  - "Navigation.astro"
+  - "ContentSection.astro"
+  - "Sidebar.astro"
+
+layouts:
+  - name: "BaseLayout.astro"
+    includes: ["astro-seo in <head>", "Header", "Footer", "canonical URL", "meta tags"]
+  - name: "TopicLayout.astro"
+    extends: "BaseLayout"
+    includes: ["Navigation", "Sidebar", "two-column layout"]
+
+content_rules:
+  word_count_min: 3000
+  h2_sections_min: 5
+  external_links_min: 3
+  external_links_max: 10
+  internal_links_min: 4
+  canonical_url: "new URL(Astro.url.pathname, Astro.site)"
+  meta_title_length: [50, 60]
+  meta_description_length: [150, 160]
+  script_directive: "is:inline"
+
+  allowed_sources:
+    - "wikipedia.org"
+    - "nih.gov"
+    - "pubmed.ncbi.nlm.nih.gov"
+    - "gov sites"
+    - "edu sites with public content"
+
+  blocked_sources:
+    - "cambridge.org/core"
+    - "tandfonline.com"
+    - "routledge.com"
+    - "jstor.org"
+    - "sciencedirect.com"
+    - "apa.org"
+    - "fsi.gov"
+
+interlinking:
+  overview_links_to: "all 6 other pillars"
+  each_pillar_links_to: "overview + at least 4 other pillars"
+  placement: "body text (contextual), NOT sidebar-only"
+  anchor_text: "descriptive, explains relationship"
+  homepage_links_to: "overview page via topic cards"
+
+validation:
+  per_page:
+    - "word_count >= 3000"
+    - "h2_count >= 5"
+    - "internal_links >= 4"
+    - "external_links >= 3"
+    - "forbidden_terms == 0"
+    - "blocked_sources == 0"
+    - "frontmatter has title, description, canonicalURL"
+
+  site_wide:
+    - "all 7 pillar .astro files exist"
+    - "homepage exists and imports BaseLayout"
+    - "npm run build exits 0"
+    - "sitemap-index.xml generated with all page URLs"
+    - "robots.txt exists with correct sitemap URL"
+    - "no temp scripts in project root"
+    - "no .env in git"
