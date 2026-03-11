@@ -21,3 +21,6 @@ netlify-site-info.json
 !setup-webhooks.cjs
 !validate-page.cjs
 !verify-links.cjs
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,74 @@
+---
+const { relatedTopics, keyPoints } = Astro.props;
+
+const defaultRelated = [
+  { name: "History & Evolution", href: "/ecommerce/history/" },
+  { name: "Technical Deep-Dive", href: "/ecommerce/technical-deep-dive/" },
+  { name: "Ontology & Knowledge Base", href: "/ecommerce/ontology/" },
+  { name: "Current Trends", href: "/ecommerce/trends/" },
+  { name: "Tools & Resources", href: "/ecommerce/tools/" },
+  { name: "Challenges & Solutions", href: "/ecommerce/challenges/" },
+];
+
+const topics = relatedTopics || defaultRelated;
+const points = keyPoints || [];
+---
+
+<aside class="space-y-6">
+  <!-- Related Topics -->
+  <div class="brutalist-border p-6 bg-white dark:bg-slate-900 shadow-brutal-sm">
+    <h3 class="text-lg font-black uppercase text-primary mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined">folder</span>
+      Related Topics
+    </h3>
+    <ul class="space-y-2 font-bold text-xs uppercase">
+      {topics.map((topic: { name: string; href: string }) => (
+        <li>
+          <a 
+            href={topic.href}
+            class="block hover:bg-primary hover:text-white px-3 py-2 transition-colors brutalist-border border-transparent hover:border-primary"
+          >
+            &gt;&gt; {topic.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  
+  <!-- Key Points -->
+  {points.length > 0 && (
+    <div class="brutalist-border p-6 bg-white dark:bg-slate-900 shadow-brutal-sm">
+      <h3 class="text-lg font-black uppercase text-primary mb-4 flex items-center gap-2">
+        <span class="material-symbols-outlined">lightbulb</span>
+        Key Points
+      </h3>
+      <ul class="space-y-2 text-sm">
+        {points.map((point: string) => (
+          <li class="flex gap-2">
+            <span class="text-primary font-bold">&gt;</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+  
+  <!-- Stats Widget -->
+  <div class="brutalist-border p-6 bg-primary text-white shadow-brutal-sm">
+    <h3 class="text-sm font-black uppercase mb-4">Quick Stats</h3>
+    <div class="space-y-3 text-xs font-bold">
+      <div class="flex justify-between">
+        <span>Global Ecommerce</span>
+        <span>$6.5T (2023)</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Mobile Commerce</span>
+        <span>50%+ share</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Shopify Stores</span>
+        <span>4.6M+ active</span>
+      </div>
+    </div>
+  </div>
+</aside>

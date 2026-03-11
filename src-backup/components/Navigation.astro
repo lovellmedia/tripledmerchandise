@@ -1,0 +1,37 @@
+---
+const { currentTopic, currentPillar } = Astro.props;
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Ecommerce", href: "/ecommerce/" },
+];
+
+if (currentPillar && currentPillar !== "index") {
+  const pillarNames: Record<string, string> = {
+    "history": "History & Evolution",
+    "technical-deep-dive": "Technical Deep-Dive",
+    "ontology": "Ontology & Knowledge Base",
+    "trends": "Current Trends & Future Outlook",
+    "tools": "Tools & Resources",
+    "challenges": "Common Challenges & Solutions",
+  };
+  breadcrumbs.push({ name: pillarNames[currentPillar] || currentPillar, href: `#` });
+}
+---
+
+<nav class="flex items-center gap-2 text-sm font-bold uppercase mb-4 flex-wrap" aria-label="Breadcrumb">
+  {breadcrumbs.map((crumb, index) => (
+    <>
+      {index > 0 && <span class="text-primary">/</span>}
+      <a 
+        href={crumb.href}
+        class={index === breadcrumbs.length - 1 
+          ? "text-primary" 
+          : "hover:text-primary transition-colors"
+        }
+      >
+        {crumb.name}
+      </a>
+    </>
+  ))}
+</nav>
