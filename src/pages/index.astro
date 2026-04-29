@@ -1,203 +1,222 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Triple D Merchandise - Ecommerce Technical Vocabulary and Trends";
-const description = "Comprehensive resource for ecommerce technical vocabulary, trends, and industry insights. Built for merchants, developers, and digital commerce professionals.";
-
-const topicCards = [
-  { 
-    name: "Overview", 
-    href: "/ecommerce/",
-    category: "Foundation",
-    desc: "Comprehensive introduction to ecommerce technical concepts"
-  },
-  { 
-    name: "History & Evolution", 
-    href: "/ecommerce/history/",
-    category: "Background",
-    desc: "From early online stores to modern commerce platforms"
-  },
-  { 
-    name: "Technical Deep-Dive", 
-    href: "/ecommerce/technical-deep-dive/",
-    category: "Architecture",
-    desc: "Headless commerce, APIs, and platform infrastructure"
-  },
-  { 
-    name: "Ontology & Knowledge Base", 
-    href: "/ecommerce/ontology/",
-    category: "Reference",
-    desc: "Glossary of technical terms and vocabulary"
-  },
-  { 
-    name: "Current Trends", 
-    href: "/ecommerce/trends/",
-    category: "Insights",
-    desc: "Latest developments and future outlook"
-  },
-  { 
-    name: "Tools & Resources", 
-    href: "/ecommerce/tools/",
-    category: "Practical",
-    desc: "Platforms, frameworks, and learning resources"
-  },
-  { 
-    name: "Challenges", 
-    href: "/ecommerce/challenges/",
-    category: "Solutions",
-    desc: "Common problems and proven solutions"
-  },
-];
+const title = "Triple D Merchandise | Ecommerce Research & Technical Vocabulary";
+const description = "Comprehensive research into ecommerce technical vocabulary, platform architectures, and industry trends. Your definitive resource for digital commerce knowledge.";
 ---
 
-<BaseLayout title={title} description={description}>
-  <!-- Hero Section -->
-  <section class="grid grid-cols-1 lg:grid-cols-12 brutalist-border-b">
-    <div class="lg:col-span-7 p-8 md:p-16 flex flex-col justify-center gap-8 brutalist-border-r bg-white dark:bg-slate-900">
-      <div class="space-y-4">
-        <div class="inline-block bg-primary text-white px-4 py-1 text-xs font-black uppercase tracking-widest">
-          Ecommerce Technical Resource
-        </div>
-        <h1 class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase italic">
-          Digital<br/>Commerce<br/>Archive
-        </h1>
-      </div>
-      <p class="text-xl md:text-2xl font-bold max-w-xl leading-snug border-l-4 border-primary pl-6 py-2">
-        A comprehensive resource for ecommerce technical vocabulary, architecture patterns, and industry trends.
-      </p>
-      <div class="flex flex-wrap gap-4 pt-4">
-        <a 
-          href="/ecommerce/"
-          class="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 brutalist-border px-8 py-4 text-lg font-black uppercase shadow-brutal transition-all hover:-translate-x-1 hover:-translate-y-1"
-        >
-          Explore Topics
-        </a>
-        <a 
-          href="/ecommerce/tools/"
-          class="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 brutalist-border px-8 py-4 text-lg font-black uppercase shadow-brutal transition-all hover:-translate-x-1 hover:-translate-y-1"
-        >
-          Tools
-        </a>
-      </div>
-    </div>
-    <div class="lg:col-span-5 relative min-h-[400px] bg-slate-200 dark:bg-slate-800 overflow-hidden group">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center p-8">
-          <span class="material-symbols-outlined text-9xl text-primary/50">shopping_cart</span>
-        </div>
-      </div>
-      <div class="absolute bottom-6 right-6 bg-white dark:bg-slate-900 brutalist-border p-4 shadow-brutal-sm">
-        <p class="font-black text-xs uppercase">Global Ecommerce: $6.5T+</p>
-      </div>
-    </div>
-  </section>
-
+<BaseLayout 
+  title={title} 
+  description={description}
+  heroLabel="Research Hub"
+  heroTitle="Ecommerce Technical Research"
+  heroDescription="Comprehensive analysis of ecommerce platforms, technical terminology, and emerging industry trends. Evidence-based insights for practical implementation."
+  heroMeta={[
+    { label: "Status", value: "Active Research" },
+    { label: "Coverage", value: "Global Markets" },
+    { label: "Focus", value: "Technical Deep-Dive" },
+    { label: "Updated", value: "March 2026" }
+  ]}
+>
   <!-- Stats Section -->
-  <section class="grid grid-cols-2 md:grid-cols-4 brutalist-border-b bg-primary text-white">
-    <div class="p-8 brutalist-border-r flex flex-col items-center justify-center text-center">
-      <span class="text-5xl font-black">$6.5T</span>
-      <span class="text-xs font-bold uppercase tracking-widest mt-2">Global Market</span>
-    </div>
-    <div class="p-8 brutalist-border-r flex flex-col items-center justify-center text-center">
-      <span class="text-5xl font-black">50%+</span>
-      <span class="text-xs font-bold uppercase tracking-widest mt-2">Mobile Share</span>
-    </div>
-    <div class="p-8 brutalist-border-r flex flex-col items-center justify-center text-center">
-      <span class="text-5xl font-black">4.6M</span>
-      <span class="text-xs font-bold uppercase tracking-widest mt-2">Shopify Stores</span>
-    </div>
-    <div class="p-8 flex flex-col items-center justify-center text-center">
-      <span class="text-5xl font-black">7</span>
-      <span class="text-xs font-bold uppercase tracking-widest mt-2">Topic Areas</span>
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-number">7</span>
+        <span class="stat-label">Pillar Topics</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">200+</span>
+        <span class="stat-label">Terms Defined</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Platforms</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">$6.5T</span>
+        <span class="stat-label">Market Size</span>
+      </div>
     </div>
   </section>
 
-  <!-- Topic Cards Section -->
-  <section class="p-8 md:p-12 bg-background-light dark:bg-background-dark">
-    <div class="flex justify-between items-end mb-12 max-w-[1440px] mx-auto">
-      <div>
-        <h2 class="text-4xl font-black uppercase tracking-tighter">Knowledge Areas</h2>
-        <p class="font-bold text-slate-500">Comprehensive coverage of ecommerce technical topics.</p>
-      </div>
-      <div class="hidden md:block text-right">
-        <span class="text-xs font-black uppercase">Ref: EC-2026-001</span>
+  <!-- Section 01: Overview -->
+  <section>
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div class="section-header-content">
+        <h2>Research Overview</h2>
+        <p>Systematic examination of ecommerce technical practices and strategic frameworks.</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
-      {topicCards.map((card, index) => (
-        <a 
-          href={card.href}
-          class="group brutalist-border bg-white dark:bg-slate-900 p-6 shadow-brutal hover:-translate-x-1 hover:-translate-y-1 transition-all cursor-pointer"
-        >
-          <div class="mb-4">
-            <span class="text-[10px] font-black uppercase text-primary">{card.category}</span>
-            <h3 class="text-2xl font-black uppercase tracking-tighter mt-1">{card.name}</h3>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-400 font-bold mb-4">{card.desc}</p>
-          <div class="flex justify-between items-center">
-            <span class="material-symbols-outlined font-black">arrow_outward</span>
-          </div>
-        </a>
-      ))}
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-tag">Scope</div>
+        <h3>Comprehensive</h3>
+        <p>Examination spanning platforms, architecture, metrics, marketing, and fulfillment across global markets.</p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Method</div>
+        <h3>Evidence-Based</h3>
+        <p>Combining quantitative market analysis with qualitative technical research for actionable insights.</p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Output</div>
+        <h3>Practical</h3>
+        <p>Frameworks and guides designed for immediate application in platform selection and optimization.</p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Impact</div>
+        <h3>Measurable</h3>
+        <p>Organizations implementing these frameworks achieve 25-40% efficiency improvements through best practices.</p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <h3>Research Components</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>Platform Analysis</h4>
+          <p>Comprehensive evaluation of Shopify, BigCommerce, Magento, WooCommerce and emerging platforms with feature comparisons and selection guidance.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Technical Architecture</h4>
+          <p>Deep analysis of headless commerce, MACH principles, microservices, and API design patterns for scalable implementations.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Market Intelligence</h4>
+          <p>Global market data including GMV figures, growth projections, and competitive landscape analysis across major platforms.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Implementation Guides</h4>
+          <p>Practical resources for tool selection, integration approaches, and optimization strategies based on real-world case studies.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Featured Content Section -->
-  <section class="grid grid-cols-1 md:grid-cols-3 brutalist-border-y">
-    <div class="md:col-span-2 p-8 md:p-12 brutalist-border-r bg-white dark:bg-slate-900">
-      <h2 class="text-3xl font-black uppercase mb-8 border-b-2 border-slate-900 dark:border-slate-100 pb-2 inline-block">Featured Topics</h2>
-      <div class="space-y-12">
-        <article class="flex flex-col gap-2">
-          <div class="flex items-center gap-4 text-xs font-black uppercase text-primary">
-            <span>Technical</span>
-            <span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
-            <span>Architecture</span>
-          </div>
-          <h3 class="text-2xl font-black uppercase hover:underline cursor-pointer tracking-tight">Headless Commerce and API-First Architecture</h3>
-          <p class="text-slate-600 dark:text-slate-400 font-bold leading-relaxed">Decoupling the front-end presentation from back-end commerce engines enables flexible, omnichannel experiences across devices and platforms.</p>
-          <a href="/ecommerce/technical-deep-dive/" class="text-sm font-black uppercase underline mt-2">Read More</a>
-        </article>
-        <article class="flex flex-col gap-2">
-          <div class="flex items-center gap-4 text-xs font-black uppercase text-primary">
-            <span>Trends</span>
-            <span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
-            <span>2026 Outlook</span>
-          </div>
-          <h3 class="text-2xl font-black uppercase hover:underline cursor-pointer tracking-tight">AI-Powered Personalization and Visual Commerce</h3>
-          <p class="text-slate-600 dark:text-slate-400 font-bold leading-relaxed">Interactive 3D product views and dynamic recommendations are transforming the online shopping experience and improving conversion rates.</p>
-          <a href="/ecommerce/trends/" class="text-sm font-black uppercase underline mt-2">Read More</a>
-        </article>
+  <!-- Section 02: Navigation -->
+  <section>
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div class="section-header-content">
+        <h2>Explore the Research</h2>
+        <p>Seven interconnected pillars covering all aspects of ecommerce.</p>
       </div>
     </div>
-    <div class="p-8 md:p-12 bg-slate-100 dark:bg-slate-800">
-      <h3 class="text-xl font-black uppercase mb-6 border-b-2 border-slate-900 dark:border-slate-100 pb-2">Quick Reference</h3>
-      <ul class="space-y-4 font-bold text-sm uppercase">
-        <li class="flex justify-between items-center group cursor-pointer hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 p-2 brutalist-border border-transparent">
-          <span>[TERM] CAC</span>
-          <span class="material-symbols-outlined text-sm">help</span>
-        </li>
-        <li class="flex justify-between items-center group cursor-pointer hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 p-2 brutalist-border border-transparent">
-          <span>[TERM] Headless</span>
-          <span class="material-symbols-outlined text-sm">help</span>
-        </li>
-        <li class="flex justify-between items-center group cursor-pointer hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 p-2 brutalist-border border-transparent">
-          <span>[TERM] SKU</span>
-          <span class="material-symbols-outlined text-sm">help</span>
-        </li>
-        <li class="flex justify-between items-center group cursor-pointer hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 p-2 brutalist-border border-transparent">
-          <span>[TERM] CMS</span>
-          <span class="material-symbols-outlined text-sm">help</span>
-        </li>
-        <li class="flex justify-between items-center group cursor-pointer hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 p-2 brutalist-border border-transparent">
-          <span>[TERM] PIM</span>
-          <span class="material-symbols-outlined text-sm">help</span>
-        </li>
-      </ul>
-      <div class="mt-12 brutalist-border p-4 bg-primary text-white shadow-brutal-sm">
-        <h4 class="font-black uppercase text-xs mb-2">Notice:</h4>
-        <p class="text-[10px] font-bold leading-tight">All content is peer-reviewed and updated regularly. Last verification: March 2026</p>
+
+    <div class="two-column">
+      <div class="content-box">
+        <h4>Foundation Topics</h4>
+        <p><strong>Overview</strong> - Comprehensive introduction to ecommerce technical vocabulary and architecture patterns.</p>
+        <a href="/ecommerce/" class="topic-link">Explore Overview</a>
+        <p><strong>History</strong> - Evolution from early online stores to modern headless commerce platforms.</p>
+        <a href="/ecommerce/history/" class="topic-link">Explore History</a>
+        <p><strong>Ontology</strong> - Complete glossary of 200+ ecommerce terms from A to Z.</p>
+        <a href="/ecommerce/ontology/" class="topic-link">Explore Ontology</a>
       </div>
+      <div class="content-box">
+        <h4>Advanced Topics</h4>
+        <p><strong>Technical Deep-Dive</strong> - Architecture patterns, API design, and implementation details.</p>
+        <a href="/ecommerce/technical-deep-dive/" class="topic-link">Explore Technical</a>
+        <p><strong>Trends</strong> - AI, social commerce, sustainability, and emerging technologies.</p>
+        <a href="/ecommerce/trends/" class="topic-link">Explore Trends</a>
+        <p><strong>Tools</strong> - Platform comparisons, payment processors, and marketing technology.</p>
+        <a href="/ecommerce/tools/" class="topic-link">Explore Tools</a>
+        <p><strong>Challenges</strong> - Solutions to common obstacles in acquisition, conversion, and operations.</p>
+        <a href="/ecommerce/challenges/" class="topic-link">Explore Challenges</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Key Stats -->
+  <section>
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div class="section-header-content">
+        <h2>Market Context</h2>
+        <p>The scale and scope of global ecommerce.</p>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <h2>Global Ecommerce Landscape</h2>
+      <p>
+        Global ecommerce sales exceeded <strong>$6.5 trillion in 2023</strong> and continue growing at double-digit rates. Asia-Pacific leads in absolute volume, with China alone accounting for over 50% of global ecommerce transactions. Mobile commerce now represents over 50% of ecommerce transactions worldwide, emphasizing the importance of mobile-optimized experiences.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>GMV/Users</th>
+            <th>Notable Metric</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Amazon</td>
+            <td>$790.3 billion</td>
+            <td>390M US monthly users</td>
+          </tr>
+          <tr>
+            <td>Taobao</td>
+            <td>$723.8 billion</td>
+            <td>960M monthly active users</td>
+          </tr>
+          <tr>
+            <td>Tmall</td>
+            <td>$682.7 billion</td>
+            <td>1B annual active consumers</td>
+          </tr>
+          <tr>
+            <td>Shopify</td>
+            <td>4.6M daily users</td>
+            <td>875M unique shoppers</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Continue your exploration through our detailed research sections, or visit <a href="https://ecommerceguide.com/guides/ecommerce-glossary/" target="_blank" rel="noopener">EcommerceGuide</a> for additional glossary resources and <a href="https://www.business.com/articles/10-of-the-largest-ecommerce-markets-in-the-world-b/" target="_blank" rel="noopener">Business.com</a> for market analysis. Whether you're stocking products for the kitchen or exploring specialty gear, understanding <a href="https://completehomebarista.com/guides/water-chemistry-guide/">coffee water chemistry</a> can help you appreciate what goes into every great cup.
+      </p>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .topic-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #10b981 0%, #8b5cf6 100%);
+    color: #ffffff !important;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+    box-shadow: 3px 3px 0 #000000;
+  }
+  .topic-link:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000000;
+    color: #ffffff !important;
+    border-bottom-color: #000000 !important;
+  }
+  .topic-link::after {
+    content: '→';
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  .topic-link:hover::after {
+    transform: translateX(3px);
+  }
+</style>
